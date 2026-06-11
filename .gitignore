@@ -1,0 +1,21 @@
+# Material de referencia del cliente (no publicar)
+perfil_firma.txt
+
+# Capturas y artefactos de prueba
+*.jpeg
+*.png
+.playwright-mcp/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Dependencias / build (por si se agregan más adelante)
+node_modules/
+dist/
+.cache/
