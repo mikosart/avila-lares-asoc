@@ -10,7 +10,7 @@ ambas:
 - **Propuesta 1 · «Patrimonio»** (`propuesta-1.html` + `css/p1.css`) — editorial de lujo:
   composición simétrica y centrada, serif protagonista (Playfair Display), áreas como índice
   editorial con numerales romanos y reglas doradas. Paleta azul marino + dorado.
-- **Propuesta 3 · «Estratega»** (`propuesta-3.html` + `css/p3.css`) — dossier oscuro:
+- **Propuesta 2 · «Estratega»** (`propuesta-2.html` + `css/p2.css`) — dossier oscuro:
   navegación lateral fija, alto contraste, metadatos en monospace, áreas como índice de
   informe numerado 01–10. Paleta negro azulado + ámbar (Bodoni Moda + Space Mono).
 
@@ -22,10 +22,10 @@ ambas:
 .
 ├── index.html          # Comparador de propuestas
 ├── propuesta-1.html    # Propuesta 1 · Patrimonio
-├── propuesta-3.html    # Propuesta 3 · Estratega
+├── propuesta-2.html    # Propuesta 2 · Estratega
 ├── css/
 │   ├── p1.css          # Estilos Patrimonio
-│   └── p3.css          # Estilos Estratega
+│   └── p2.css          # Estilos Estratega
 ├── js/main.js          # Navegación, animaciones, contadores y formulario (compartido)
 ├── assets/             # Favicon e imágenes
 └── README.md
