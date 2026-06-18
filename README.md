@@ -3,19 +3,39 @@
 Sitio web institucional de **Ávila, Lares & Asociados**, firma jurídica y de consultoría
 estratégica con sede en Caracas (fundada en 1988).
 
-Concepto de diseño: **"Ejecución"** — moderno, corporativo y estratégico.
-Paleta verde petróleo + cobre, tipografía Fraunces (serif editorial) + Inter Tight.
+Actualmente el repositorio contiene **dos propuestas de diseño** en evaluación, con el mismo
+contenido pero arquitecturas visuales distintas. `index.html` es un **comparador** que enlaza
+ambas:
+
+- **Propuesta 1 · «Patrimonio»** (`propuesta-1.html` + `css/p1.css`) — editorial de lujo:
+  composición simétrica y centrada, serif protagonista (Playfair Display), áreas como índice
+  editorial con numerales romanos y reglas doradas. Paleta azul marino + dorado.
+- **Propuesta 3 · «Estratega»** (`propuesta-3.html` + `css/p3.css`) — dossier oscuro:
+  navegación lateral fija, alto contraste, metadatos en monospace, áreas como índice de
+  informe numerado 01–10. Paleta negro azulado + ámbar (Bodoni Moda + Space Mono).
+
+> La antigua propuesta 2 («Ejecución») fue descartada y eliminada.
 
 ## Estructura
 
 ```
 .
-├── index.html          # Página principal (single-page)
-├── css/styles.css      # Sistema de diseño y estilos
-├── js/main.js          # Navegación, animaciones, contadores y formulario
+├── index.html          # Comparador de propuestas
+├── propuesta-1.html    # Propuesta 1 · Patrimonio
+├── propuesta-3.html    # Propuesta 3 · Estratega
+├── css/
+│   ├── p1.css          # Estilos Patrimonio
+│   └── p3.css          # Estilos Estratega
+├── js/main.js          # Navegación, animaciones, contadores y formulario (compartido)
 ├── assets/             # Favicon e imágenes
 └── README.md
 ```
+
+`js/main.js` es **compartido** por ambas propuestas y depende de estos hooks del HTML, que no
+deben renombrarse ni eliminarse: ids `siteHeader`, `navToggle`, `navLinks`, `contactForm`,
+`formNote`, `year`; clase `reveal`; `.stat-num[data-count]`; las clases de grid
+`.areas-grid` / `.equipo-grid` / `.enfoque-grid` / `.paises-grid`; los `id` de cada `<section>`;
+y los `href="#..."` de la navegación.
 
 ## Desarrollo local
 
@@ -41,11 +61,12 @@ Compatible con cualquier hosting estático. Recomendado **GitHub Pages** o **Net
 
 ## Pendientes / próximos pasos
 
+- [ ] Elegir entre Patrimonio y Estratega; renombrar la elegida a `index.html` y retirar el
+      comparador.
 - [ ] Definir y conectar el dominio.
-- [ ] Reemplazar iniciales del equipo por fotografías profesionales (opcional).
+- [ ] Reemplazar los retratos referenciales del equipo por las fotografías oficiales.
 - [ ] Conectar el formulario a un servicio (Formspree/Netlify Forms) si se desea recibir
       los envíos sin depender del cliente de correo del visitante.
-- [ ] Agregar versión en inglés (estructura ya preparada).
 - [ ] Imágenes Open Graph y favicon en PNG para compatibilidad total.
 
 ## Contacto de la firma
