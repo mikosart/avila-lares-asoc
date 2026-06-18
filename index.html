@@ -3,585 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ávila, Lares & Asociados | Firma Jurídica y Consultoría Estratégica</title>
-  <meta name="description" content="Firma jurídica y de consultoría estratégica con sede en Caracas, fundada en 1988. Asesoría legal, financiera y técnica para inversiones y negocios complejos. No solo asesoramos: hacemos que los negocios ocurran." />
-  <meta name="theme-color" content="#0E3B36" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ávila, Lares & Asociados" />
-  <meta property="og:description" content="Soluciones legales estratégicas para negocios e inversiones complejas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_VE" />
+  <title>Ávila, Lares & Asociados | Propuestas de diseño</title>
+  <meta name="description" content="Comparador de propuestas de diseño para el sitio web de Ávila, Lares & Asociados — firma jurídica y de consultoría estratégica." />
+  <meta name="theme-color" content="#0B0E14" />
+  <meta name="robots" content="noindex" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <style>
+    :root {
+      --bg-900: #07090E;
+      --bg-800: #0B0E14;
+      --bg-700: #11151D;
+      --line:   rgba(255, 255, 255, 0.10);
+      --line-2: rgba(255, 255, 255, 0.16);
+      --text:   #ECEAE3;
+      --soft:   #A6A8AE;
+      --muted:  #6E727A;
+      /* Acentos por propuesta */
+      --gold:   #C9A24B;
+      --gold-3: #DDBE7E;
+      --navy:   #0D2138;
+      --amber:  #E0A458;
+      --amber-3:#F0C792;
+      --serif:  "Fraunces", Georgia, serif;
+      --sans:   "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono:   "Space Mono", ui-monospace, monospace;
+      --ease:   cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg-800);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100svh;
+      display: flex; flex-direction: column;
+      position: relative; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* Fondo */
+    .bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(70% 60% at 50% -5%, rgba(224,164,88,.10), transparent 60%),
+        radial-gradient(50% 50% at 90% 100%, rgba(201,162,75,.07), transparent 60%),
+        var(--bg-800);
+    }
+    .bg::after {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(90% 70% at 50% 30%, #000 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(90% 70% at 50% 30%, #000 20%, transparent 100%);
+    }
+
+    .wrap {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1100px;
+      margin-inline: auto; padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3rem);
+      flex: 1; display: flex; flex-direction: column;
+    }
+
+    /* Encabezado */
+    .brand { display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: clamp(3rem, 8vw, 5.5rem); }
+    .brand-mark {
+      display: grid; place-items: center; width: 46px; height: 46px;
+      border: 1px solid var(--line-2); border-radius: 4px;
+      font-family: var(--serif); font-size: 1.05rem; color: var(--gold-3);
+    }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .brand-name { font-family: var(--serif); font-size: 1.15rem; }
+    .brand-sub { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); }
+
+    .lead { max-width: 720px; }
+    .eyebrow { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.2rem; }
+    .lead h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(2rem, 5.5vw, 3.4rem); line-height: 1.1; letter-spacing: -0.01em;
+      margin-bottom: 1.2rem;
+    }
+    .lead h1 em { font-style: italic; color: var(--gold-3); }
+    .lead p { color: var(--soft); font-size: 1.08rem; max-width: 60ch; }
+
+    /* Tarjetas */
+    .cards {
+      margin-top: clamp(2.5rem, 6vw, 4rem);
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.2rem, 3vw, 2rem);
+    }
+    .card {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      border: 1px solid var(--line); border-radius: 14px;
+      background: var(--bg-700);
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      min-height: 320px;
+      transition: transform .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease);
+    }
+    .card::before {
+      content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left;
+      transition: transform .5s var(--ease);
+    }
+    .card:hover { transform: translateY(-6px); border-color: var(--accent-line); box-shadow: 0 40px 80px -50px rgba(0,0,0,.9); }
+    .card:hover::before { transform: scaleX(1); }
+    .card.p1 { --accent: linear-gradient(90deg, var(--gold), var(--gold-3)); --accent-line: rgba(201,162,75,.4); --dot: var(--gold-3); }
+    .card.p3 { --accent: linear-gradient(90deg, var(--amber-600, #C8862F), var(--amber-3)); --accent-line: rgba(224,164,88,.4); --dot: var(--amber-3); }
+
+    .card-num { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; }
+    .card-name { font-family: var(--serif); font-weight: 400; font-size: clamp(1.7rem, 3.5vw, 2.3rem); line-height: 1.1; margin: 0.5rem 0 0.2rem; }
+    .card-tag { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dot); margin-bottom: 1.1rem; }
+    .card-desc { color: var(--soft); font-size: 0.98rem; }
+    .card-feats { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .card-feats span { font-family: var(--mono); font-size: 0.68rem; color: var(--soft); border: 1px solid var(--line); border-radius: 100px; padding: 0.35rem 0.8rem; }
+    .card-cta {
+      margin-top: auto; padding-top: 1.6rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-weight: 500; font-size: 0.95rem; color: var(--text);
+      transition: gap .35s var(--ease), color .35s var(--ease);
+    }
+    .card:hover .card-cta { gap: 1.1rem; color: var(--dot); }
+    .card-cta .arrow { transition: transform .35s var(--ease); }
+
+    /* Paleta mini-preview */
+    .swatches { position: absolute; top: clamp(1.6rem,3vw,2.4rem); right: clamp(1.6rem,3vw,2.4rem); display: flex; gap: 0.4rem; }
+    .swatches i { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); }
+
+    .foot { position: relative; z-index: 1; text-align: center; padding: 1.6rem; border-top: 1px solid var(--line); }
+    .foot p { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
+
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: 1fr; }
+      .card { min-height: 0; }
+    }
+  </style>
 </head>
 <body>
+  <div class="bg" aria-hidden="true"></div>
 
-  <!-- ====== SELECTOR DE PROPUESTAS ====== -->
-  <nav class="prop-switcher" aria-label="Comparar propuestas">
-    <span class="ps-label">Propuesta</span>
-    <a href="propuesta-1.html" title="Patrimonio (clásico-lujo)">1</a>
-    <a href="index.html" class="active" title="Ejecución (moderno-corporativo)">2</a>
-    <a href="propuesta-3.html" title="Estratega (editorial-oscuro)">3</a>
-    <span class="ps-name">Ejecución</span>
-  </nav>
+  <main class="wrap">
+    <a class="brand" href="#" aria-label="Ávila, Lares & Asociados">
+      <span class="brand-mark">AL</span>
+      <span class="brand-text">
+        <span class="brand-name">Ávila, Lares</span>
+        <span class="brand-sub">&amp; Asociados</span>
+      </span>
+    </a>
 
-  <!-- ====== HEADER / NAV ====== -->
-  <header class="site-header" id="siteHeader">
-    <div class="container nav-inner">
-      <a href="#inicio" class="brand" aria-label="Ávila, Lares & Asociados - Inicio">
-        <span class="brand-mark">AL</span>
-        <span class="brand-text">
-          <span class="brand-name">Ávila, Lares</span>
-          <span class="brand-sub">&amp; Asociados</span>
-        </span>
+    <div class="lead">
+      <p class="eyebrow">Propuestas de diseño · Selección</p>
+      <h1>Dos direcciones de marca para <em>elegir</em>.</h1>
+      <p>
+        Mismo contenido, dos arquitecturas visuales distintas. Abra cada propuesta para
+        explorarla a fondo y decidir el rumbo del sitio definitivo.
+      </p>
+    </div>
+
+    <div class="cards">
+      <a class="card p1" href="propuesta-1.html">
+        <div class="swatches" aria-hidden="true">
+          <i style="background:#0D2138"></i><i style="background:#C9A24B"></i><i style="background:#FBFAF7"></i>
+        </div>
+        <span class="card-num">Propuesta 01</span>
+        <h2 class="card-name">Patrimonio</h2>
+        <span class="card-tag">Editorial de lujo</span>
+        <p class="card-desc">
+          Composición simétrica y serif protagonista. Hero centrado, índice editorial con
+          numerales romanos y reglas doradas. Aire de banca privada heredada.
+        </p>
+        <div class="card-feats">
+          <span>Azul marino + dorado</span><span>Serif Playfair</span><span>Simétrico</span>
+        </div>
+        <span class="card-cta">Ver propuesta <span class="arrow">→</span></span>
       </a>
 
-      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-        <a href="#firma">La Firma</a>
-        <a href="#areas">Áreas</a>
-        <a href="#enfoque">Enfoque</a>
-        <a href="#equipo">Equipo</a>
-        <a href="#internacional">Internacional</a>
-        <a href="#contacto" class="nav-cta">Contacto</a>
-      </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- ====== HERO ====== -->
-  <section class="hero" id="inicio">
-    <div class="hero-bg" aria-hidden="true">
-      <img src="assets/img/torre.jpg" class="hero-photo" alt="" />
-      <div class="hero-tint"></div>
-      <div class="hero-grid"></div>
-      <div class="hero-glow"></div>
-    </div>
-    <div class="container hero-inner">
-      <p class="eyebrow reveal">Caracas · Desde 1988 · Alcance Internacional</p>
-      <h1 class="hero-title reveal">
-        No solo asesoramos.<br />
-        <em>Hacemos que los negocios</em> ocurran.
-      </h1>
-      <p class="hero-lead reveal">
-        Firma jurídica y de consultoría estratégica. Integramos visión legal, financiera
-        y técnica para estructurar, proteger y ejecutar inversiones y negocios complejos.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#contacto" class="btn btn-primary">Hablemos de su operación</a>
-        <a href="#areas" class="btn btn-ghost">Ver áreas de práctica</a>
-      </div>
-
-      <div class="hero-stats reveal">
-        <div class="stat">
-          <span class="stat-num" data-count="1988" data-format="year">1988</span>
-          <span class="stat-label">Año de fundación</span>
+      <a class="card p3" href="propuesta-3.html">
+        <div class="swatches" aria-hidden="true">
+          <i style="background:#0B0E14"></i><i style="background:#E0A458"></i><i style="background:#ECEAE3"></i>
         </div>
-        <div class="stat">
-          <span class="stat-num" data-count="50" data-suffix="+">+50</span>
-          <span class="stat-label">Proyectos estructurados</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="4" data-suffix="">4</span>
-          <span class="stat-label">Países en nuestra red</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-count="11" data-suffix="+">+11</span>
-          <span class="stat-label">Áreas de experiencia</span>
-        </div>
-      </div>
-    </div>
-    <a href="#firma" class="scroll-hint" aria-label="Desplazarse hacia abajo">
-      <span></span>
-    </a>
-  </section>
-
-  <!-- ====== MARQUEE SECTORES ====== -->
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Oil &amp; Gas</span><span>•</span>
-      <span>Minería</span><span>•</span>
-      <span>Energía</span><span>•</span>
-      <span>Infraestructura</span><span>•</span>
-      <span>Real Estate</span><span>•</span>
-      <span>Banca &amp; Finanzas</span><span>•</span>
-      <span>Comercio Internacional</span><span>•</span>
-      <span>M&amp;A</span><span>•</span>
-      <span>Inversión Extranjera</span><span>•</span>
-      <span>Compliance</span><span>•</span>
-      <span>Oil &amp; Gas</span><span>•</span>
-      <span>Minería</span><span>•</span>
-      <span>Energía</span><span>•</span>
-      <span>Infraestructura</span><span>•</span>
-      <span>Real Estate</span><span>•</span>
-      <span>Banca &amp; Finanzas</span><span>•</span>
-      <span>Comercio Internacional</span><span>•</span>
-      <span>M&amp;A</span><span>•</span>
-      <span>Inversión Extranjera</span><span>•</span>
-      <span>Compliance</span><span>•</span>
-    </div>
-  </div>
-
-  <!-- ====== LA FIRMA ====== -->
-  <section class="section firma" id="firma">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow reveal">Quiénes somos</p>
-        <h2 class="section-title reveal">
-          Más que asesores legales,<br />somos <em>aliados estratégicos</em>.
-        </h2>
-      </div>
-
-      <div class="firma-grid">
-        <div class="firma-text reveal">
-          <p>
-            Operamos en la intersección entre <strong>derecho, negocios y oportunidades</strong>,
-            combinando experiencia legal, técnica y financiera para desenvolvernos con eficacia
-            en entornos regulatorios complejos, particularmente en sectores estratégicos y
-            altamente regulados.
-          </p>
-          <p>
-            Acompañamos inversiones, estructuramos operaciones y facilitamos negocios complejos
-            mediante soluciones integrales con respaldo jurídico, financiero y técnico.
-            Transformamos oportunidades en negocios <strong>viables, estructurados y protegidos</strong>.
-          </p>
-          <figure class="firma-photo reveal">
-            <img src="assets/img/junta.jpg" alt="Equipo de Ávila, Lares & Asociados en reunión de trabajo" loading="lazy" />
-          </figure>
-        </div>
-
-        <div class="pillars">
-          <article class="pillar reveal">
-            <span class="pillar-num">01</span>
-            <h3>Visión estratégica</h3>
-            <p>Anticipamos riesgos y leemos el entorno regulatorio para convertir cada decisión en una ventaja.</p>
-          </article>
-          <article class="pillar reveal">
-            <span class="pillar-num">02</span>
-            <h3>Capacidad de ejecución</h3>
-            <p>Desde la negociación hasta el cierre. No nos detenemos en el consejo: ejecutamos resultados.</p>
-          </article>
-          <article class="pillar reveal">
-            <span class="pillar-num">03</span>
-            <h3>Gestión de riesgos</h3>
-            <p>Criterio empresarial para transformar riesgos regulatorios, políticos y contractuales en escenarios controlados.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== ÁREAS DE PRÁCTICA ====== -->
-  <section class="section areas" id="areas">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow reveal">Áreas de experiencia · ¿Qué hacemos?</p>
-        <h2 class="section-title reveal">
-          Asesoría y acompañamiento en<br /><em>operaciones de alto valor</em>.
-        </h2>
-      </div>
-
-      <div class="areas-grid">
-        <article class="area-card reveal">
-          <div class="area-ico">⬡</div>
-          <h3>Corporativo y Transaccional</h3>
-          <p>Estructuración de inversiones, fusiones y adquisiciones (M&amp;A), reorganizaciones, gobierno corporativo y protección patrimonial.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">⬢</div>
-          <h3>Administrativo y Regulatorio</h3>
-          <p>Contrataciones públicas, concesiones, licencias y permisos. Representación ante entes regulatorios y procedimientos administrativos.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">◆</div>
-          <h3>Energía y Recursos Naturales</h3>
-          <p>Oil &amp; Gas, petroquímica y minería. Contratos E&amp;P, empresas mixtas, licitaciones y ejecución de proyectos estratégicos.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">❖</div>
-          <h3>Ambiental y Urbanístico</h3>
-          <p>Estudios de impacto, pasivos ambientales, huella de carbono, bonos verdes y permisos de ocupación del territorio.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">▣</div>
-          <h3>Laboral y Organizacional</h3>
-          <p>Relaciones laborales, negociación colectiva, pasivos laborales, compensación, seguridad y salud ocupacional.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">◈</div>
-          <h3>Civil y Patrimonial</h3>
-          <p>Planificación patrimonial, sucesiones, estructuración de activos y proyectos inmobiliarios.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">✦</div>
-          <h3>Propiedad Intelectual y Marcas</h3>
-          <p>Protección, registro y defensa de activos intangibles en Venezuela e internacionalmente, incluyendo recursos genéticos.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">⚓</div>
-          <h3>Marítimo, Logística y Seguros</h3>
-          <p>Asuntos portuarios, transporte marítimo, logística, actividades offshore y cumplimiento de normativa MARPOL.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">⬣</div>
-          <h3>Compliance y Calidad</h3>
-          <p>Cumplimiento normativo, estándares ISO 9001, auditorías y diseño de políticas de prevención de riesgos.</p>
-        </article>
-        <article class="area-card reveal">
-          <div class="area-ico">▤</div>
-          <h3>Auditoría, Valuación y Peritajes</h3>
-          <p>Avalúos, valuación de empresas, due diligence técnico-financiero y diagnóstico de riesgos operacionales.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== BANDA DE IMAGEN ====== -->
-  <section class="imageband" aria-label="Nuestra promesa">
-    <img src="assets/img/skyline.jpg" class="imageband-photo" alt="" />
-    <div class="imageband-overlay"></div>
-    <div class="container imageband-inner">
-      <p class="imageband-eyebrow reveal">Ávila, Lares &amp; Asociados</p>
-      <h2 class="imageband-title reveal">Protegemos capital. Estructuramos oportunidades.<br /><em>Ejecutamos resultados.</em></h2>
-    </div>
-  </section>
-
-  <!-- ====== ASESORÍA TRIBUTARIA INTERNACIONAL ====== -->
-  <section class="section tributaria" id="tributaria">
-    <div class="container tributaria-inner">
-      <div class="tributaria-text reveal">
-        <p class="eyebrow">Estructuración internacional</p>
-        <h2 class="section-title">
-          Asesoría tributaria y<br /><em>vehículos de inversión</em>.
-        </h2>
-        <p class="lead-muted">
-          Junto a nuestros socios internacionales estratégicos, abordamos soluciones
-          tributarias complejas y la estructuración de vehículos de inversión transfronterizos.
+        <span class="card-num">Propuesta 03</span>
+        <h2 class="card-name">Estratega</h2>
+        <span class="card-tag">Dossier oscuro</span>
+        <p class="card-desc">
+          Navegación lateral fija, alto contraste y metadatos en monospace. Áreas como índice
+          de informe numerado. Estética de dossier estratégico premium.
         </p>
-      </div>
-      <ul class="trib-list">
-        <li class="reveal"><span>Planificación fiscal internacional</span></li>
-        <li class="reveal"><span>Estructuración corporativa transfronteriza</span></li>
-        <li class="reveal"><span>Protección patrimonial</span></li>
-        <li class="reveal"><span>Cumplimiento tributario internacional</span></li>
-        <li class="reveal"><span>Optimización de estructuras de inversión</span></li>
-      </ul>
+        <div class="card-feats">
+          <span>Negro azulado + ámbar</span><span>Display Bodoni</span><span>Nav lateral</span>
+        </div>
+        <span class="card-cta">Ver propuesta <span class="arrow">→</span></span>
+      </a>
     </div>
-  </section>
+  </main>
 
-  <!-- ====== ENFOQUE ESTRATÉGICO ====== -->
-  <section class="section enfoque" id="enfoque">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow reveal">Enfoque de riesgo y valor</p>
-        <h2 class="section-title reveal">
-          Toda inversión requiere una <em>estructura jurídica sólida</em><br />
-          para ser viable, segura y sostenible.
-        </h2>
-        <p class="section-intro reveal">
-          Invertir en Venezuela exige más que conocimiento legal: requiere precisión, acceso
-          y capacidad efectiva de ejecución. Transformamos riesgos en escenarios controlados.
-        </p>
-      </div>
-
-      <div class="enfoque-grid">
-        <article class="enfoque-card reveal">
-          <h3>Mitigación de riesgos</h3>
-          <p>Regulatorios, políticos y contractuales — identificados de manera anticipada.</p>
-        </article>
-        <article class="enfoque-card reveal">
-          <h3>Estructuración de transacciones</h3>
-          <p>Estructuras jurídicas sólidas y eficientes, diseñadas para resistir.</p>
-        </article>
-        <article class="enfoque-card reveal">
-          <h3>Visión local, estándar global</h3>
-          <p>Conocimiento profundo del entorno venezolano con estándares internacionales.</p>
-        </article>
-        <article class="enfoque-card reveal">
-          <h3>Capacidad de ejecución</h3>
-          <p>Desde la negociación hasta el cierre de la operación. Resultados, no promesas.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== SECTORES ====== -->
-  <section class="section sectores" id="sectores">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow reveal">Sectores estratégicos</p>
-        <h2 class="section-title reveal">Donde <em>creamos valor</em>.</h2>
-      </div>
-      <div class="sectores-list">
-        <span class="reveal">Energía &amp; Oil &amp; Gas</span>
-        <span class="reveal">Minería y recursos naturales</span>
-        <span class="reveal">Infraestructura y construcción</span>
-        <span class="reveal">Telecomunicaciones</span>
-        <span class="reveal">Turismo y Real Estate</span>
-        <span class="reveal">Servicios financieros</span>
-        <span class="reveal">Comercio internacional</span>
-        <span class="reveal">Logística y transporte</span>
-        <span class="reveal">Manufactura y agroindustria</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== EQUIPO ====== -->
-  <section class="section equipo" id="equipo">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow reveal">Consultores y asesores</p>
-        <h2 class="section-title reveal">Un equipo de <em>alto nivel</em>,<br />experiencia nacional e internacional.</h2>
-        <p class="equipo-note reveal">Retratos referenciales — se sustituirán por las fotografías oficiales de cada integrante.</p>
-      </div>
-
-      <div class="equipo-grid">
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-alejandro.jpg" alt="Alejandro Ávila Vivas" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>Alejandro Ávila Vivas</h3>
-            <span class="member-role">Socio</span>
-            <p>Abogado (UCV). Sector energético, servicios petroleros y telecomunicaciones. Especialista en estructuración contractual, procesos licitatorios y operaciones E&amp;P en Venezuela y Colombia.</p>
-          </div>
-        </article>
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-maria.jpg" alt="María Margarita Lares Santini" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>María Margarita Lares Santini</h3>
-            <span class="member-role">Socia</span>
-            <p>Abogada (UCV). Experta en relaciones laborales, compensación internacional y gestión organizacional en entornos corporativos complejos.</p>
-          </div>
-        </article>
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-hector.jpg" alt="Héctor Hernández" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>Héctor Hernández</h3>
-            <span class="member-role">Socio</span>
-            <p>Especialista en ordenación del territorio y gestión ambiental. Estudios de impacto ambiental y auditorías de sistemas de gestión de calidad, seguridad y salud laboral.</p>
-          </div>
-        </article>
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-ralph.jpg" alt="Dr. Ralph Echeverría" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>Dr. Ralph Echeverría</h3>
-            <span class="member-role">Consultor Internacional</span>
-            <p>Derecho Corporativo Internacional, Banca y Finanzas, Energía, Comercio Internacional, Joint Ventures, protección de inversiones extranjeras, compliance y arbitraje internacional.</p>
-          </div>
-        </article>
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-victor.jpg" alt="Víctor Rodríguez Sosa" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>Econ. Víctor Rodríguez Sosa</h3>
-            <span class="member-role">Consultor</span>
-            <p>PhD en Economía y Ciencias Sociales. Magíster en Finanzas. Estructuración financiera, evaluación de inversiones y gestión de riesgos en más de 50 proyectos.</p>
-          </div>
-        </article>
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-armando.jpg" alt="Armando García Sosa" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>Armando García Sosa</h3>
-            <span class="member-role">Consultor</span>
-            <p>Ingeniero químico con postgrado en economía de hidrocarburos. Trayectoria gerencial en la industria petrolera nacional e internacional.</p>
-          </div>
-        </article>
-        <article class="member reveal">
-          <div class="member-avatar"><img src="assets/img/team-margarita.jpg" alt="Margarita Pestana" loading="lazy" /></div>
-          <div class="member-info">
-            <h3>Margarita Pestana</h3>
-            <span class="member-role">Consultora</span>
-            <p>Abogada especializada en auditoría, cumplimiento normativo y control financiero.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== ALCANCE INTERNACIONAL ====== -->
-  <section class="section internacional" id="internacional">
-    <div class="container">
-      <div class="section-head center">
-        <p class="eyebrow reveal">Alcance internacional</p>
-        <h2 class="section-title reveal">Una red de cooperación profesional<br />en <em>cuatro países</em>.</h2>
-        <p class="section-intro reveal">
-          Alianzas estratégicas con reconocidas firmas jurídicas y consultoras en Venezuela,
-          Estados Unidos, Colombia y Panamá que potencian operaciones nacionales y transfronterizas.
-        </p>
-      </div>
-
-      <div class="paises-grid">
-        <div class="pais reveal">
-          <span class="pais-code">VE</span>
-          <h3>Venezuela</h3>
-          <p>Sede principal — Caracas</p>
-        </div>
-        <div class="pais reveal">
-          <span class="pais-code">US</span>
-          <h3>Estados Unidos</h3>
-          <p>Miami, Florida</p>
-        </div>
-        <div class="pais reveal">
-          <span class="pais-code">CO</span>
-          <h3>Colombia</h3>
-          <p>Bogotá</p>
-        </div>
-        <div class="pais reveal">
-          <span class="pais-code">PA</span>
-          <h3>Panamá</h3>
-          <p>Ciudad de Panamá</p>
-        </div>
-      </div>
-
-      <div class="aliados reveal">
-        <p class="aliados-label">Relaciones estratégicas y profesionales</p>
-        <div class="aliados-list">
-          <span>Echeverría &amp; Associates · Miami</span>
-          <span>The Milian Legal Group · Miami</span>
-          <span>Consulting Management S.A.S. · Bogotá</span>
-          <span>Mary Belén Coronado &amp; Asociados · Bogotá</span>
-          <span>Carrillo Ballesteros Abogados · Bogotá</span>
-          <span>GIINTAX · Panamá</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== POR QUÉ ELEGIRNOS ====== -->
-  <section class="section porque" id="porque">
-    <img src="assets/img/energia-noche.jpg" class="porque-photo" alt="" />
-    <div class="container">
-      <div class="porque-inner">
-        <div class="porque-head reveal">
-          <p class="eyebrow">¿Por qué elegirnos?</p>
-          <h2 class="section-title">Respaldo integral con<br /><em>enfoque empresarial</em>.</h2>
-        </div>
-        <ul class="porque-list">
-          <li class="reveal">Experiencia en sectores estratégicos y regulados</li>
-          <li class="reveal">Enfoque práctico orientado a resultados</li>
-          <li class="reveal">Profundo conocimiento del entorno venezolano</li>
-          <li class="reveal">Atención personalizada y confidencialidad absoluta</li>
-          <li class="reveal">Acompañamiento integral en todas las fases de la inversión</li>
-          <li class="reveal">Capacidad multidisciplinaria legal, financiera y técnica</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== CONTACTO ====== -->
-  <section class="section contacto" id="contacto">
-    <div class="container contacto-inner">
-      <div class="contacto-text reveal">
-        <p class="eyebrow">Contacto</p>
-        <h2 class="section-title">Conversemos sobre<br /><em>su próxima operación</em>.</h2>
-        <p class="lead-muted">
-          Cuéntenos sobre su inversión o negocio. Le responderemos con la confidencialidad
-          y el rigor que su operación requiere.
-        </p>
-
-        <div class="contacto-details">
-          <div class="cdetail">
-            <span class="cdetail-label">Dirección</span>
-            <p>2da. Av. Urb. Campo Alegre<br />Torre Credival, Piso 5, Oficina 5D<br />Chacao, Caracas — Venezuela</p>
-          </div>
-          <div class="cdetail">
-            <span class="cdetail-label">Teléfonos</span>
-            <p>
-              <a href="tel:+584142429880">+58 414 242 98.80</a><br />
-              <a href="tel:+584142454971">+58 414 245 49.71</a>
-            </p>
-          </div>
-          <div class="cdetail">
-            <span class="cdetail-label">Correo</span>
-            <p><a href="mailto:avilalaresyasociados@gmail.com">avilalaresyasociados@gmail.com</a></p>
-          </div>
-        </div>
-      </div>
-
-      <form class="contacto-form reveal" id="contactForm" novalidate>
-        <div class="field">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" required autocomplete="name" />
-        </div>
-        <div class="field">
-          <label for="empresa">Empresa / Organización</label>
-          <input type="text" id="empresa" name="empresa" autocomplete="organization" />
-        </div>
-        <div class="field">
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
-        </div>
-        <div class="field">
-          <label for="asunto">Área de interés</label>
-          <select id="asunto" name="asunto">
-            <option value="Corporativo y Transaccional">Corporativo y Transaccional</option>
-            <option value="Energía y Recursos Naturales">Energía y Recursos Naturales</option>
-            <option value="Administrativo y Regulatorio">Administrativo y Regulatorio</option>
-            <option value="Ambiental y Urbanístico">Ambiental y Urbanístico</option>
-            <option value="Inversión Extranjera">Inversión Extranjera</option>
-            <option value="Tributario Internacional">Tributario Internacional</option>
-            <option value="Otra">Otra</option>
-          </select>
-        </div>
-        <div class="field field-full">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Enviar consulta</button>
-        <p class="form-note" id="formNote" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- ====== FOOTER ====== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#inicio" class="brand brand--footer">
-          <span class="brand-mark">AL</span>
-          <span class="brand-text">
-            <span class="brand-name">Ávila, Lares</span>
-            <span class="brand-sub">&amp; Asociados</span>
-          </span>
-        </a>
-        <p class="footer-tagline">
-          Soluciones legales estratégicas para negocios e inversiones complejas.
-          Protegemos capital. Estructuramos oportunidades. Ejecutamos resultados.
-        </p>
-      </div>
-
-      <nav class="footer-nav" aria-label="Pie de página">
-        <div>
-          <span class="footer-col-title">Firma</span>
-          <a href="#firma">Quiénes somos</a>
-          <a href="#enfoque">Enfoque</a>
-          <a href="#equipo">Equipo</a>
-        </div>
-        <div>
-          <span class="footer-col-title">Práctica</span>
-          <a href="#areas">Áreas</a>
-          <a href="#sectores">Sectores</a>
-          <a href="#internacional">Internacional</a>
-        </div>
-        <div>
-          <span class="footer-col-title">Contacto</span>
-          <a href="tel:+584142429880">+58 414 242 98.80</a>
-          <a href="mailto:avilalaresyasociados@gmail.com">Correo electrónico</a>
-          <a href="#contacto">Agendar consulta</a>
-        </div>
-      </nav>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year">2026</span> Ávila, Lares &amp; Asociados. Todos los derechos reservados.</p>
-      <p>Caracas · Miami · Bogotá · Panamá</p>
-    </div>
+  <footer class="foot">
+    <p>Ávila, Lares &amp; Asociados · Caracas · Miami · Bogotá · Panamá</p>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>
